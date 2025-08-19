@@ -1,0 +1,19 @@
+import React, { useState } from 'react';
+import 'react-datepicker/dist/react-datepicker.css';
+import { Claim, initialClaimsData } from '@/app/jsondata/adminJsonData';
+import ClaimsProcessedTable from './Tables/GenericClaimsTable';
+
+const ActiveClaims: React.FC = () => {
+  const [claimsData] = useState<Claim[]>(initialClaimsData.filter((data) => data.claimStatus === 'Assessment Active'));
+
+  return (
+    <div className="p-2 font-geist">
+      <div className="py-1 space-y-4 text-[#333333] font-geist bg-[#FBFBFB] mb-6">
+        <h2 className="text-[24px] font-medium m-0 font-geist">Active Claims</h2>
+      </div>
+      <ClaimsProcessedTable rowData={claimsData} />
+    </div>
+  );
+};
+
+export default ActiveClaims;  

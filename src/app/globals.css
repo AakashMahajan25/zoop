@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@layer base {
+  a,
+  button,
+  [type="button"],
+  [type="submit"],
+  [role="button"],
+  .btn,
+  .link,
+  .cta,
+  .clickable {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [type="button"]:disabled,
+  [type="submit"]:disabled,
+  [aria-disabled="true"],
+  .disabled {
+    cursor: not-allowed;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html, body, #__next {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Geist';
+}
+
+.custom-accent {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-accent:checked {
+  background-color: #21FF91;
+  border-color: #21FF91;
+}
+
+.custom-accent:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.tableTextStyle {
+  font-family: 'Geist';
+  font-weight: 400;
+  font-size: '14px';
+  line-height: '100%';
+  letter-spacing: '0px';
+  /* text-transform: 'capitalize'; */
+  background-color: linear-gradient(0deg, #333333, #333333), linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  -webkit-text-fill-color: 'transparent';
+  -webkit-background-clip: 'text';
+  margin-top: 8px;
+};
+
+.ag-theme-alpine .ag-cell {
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+}
+
+.ag-header-row {
+  background-color: #fbfbfb; /* custom background */
+  color: #858585; /* custom font color */
+  font-family: "Geist", sans-serif; /* custom font */
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+}
+
+.ag-header-container {
+  border-bottom: 1px solid transparent;
+}
+
+.ag-header-cell {
+  border-bottom: 1px solid transparent;
+}
+
+.ag-cell {
+  font-family: "Geist", sans-serif; /* custom font */
+  font-size: 14px;
+  font-weight: 400;
+  color: #858585;
+  border-bottom: 1px solid #EFEFEFE5
+}
+.ag-cell:focus {
+   background-color: transparent !important;
+   outline: none !important;
+ }
+
+.ag-icon-menu-alt {
+  color: #000000 !important;
+}
+
+.ag-row {
+  border-bottom: 1px solid #EFEFEFE5;
+}
+
+.actions-button-cell {
+  overflow: visible;
+}
+
+.ag-row.ag-row-focus {
+  z-index: 1;
+}
+
+.btn {
+  line-height: 0.5;
+}
+
+
+
+
